@@ -1,0 +1,176 @@
+/* heatherhzli.com — shared stylesheet for every page */
+
+:root {
+  --paper: #fcfcfa;
+  --ink: #1e2320;
+  --muted: #5e6661;
+  --moss: #4f6b4a;
+  --lichen: #dce8d4;
+  --rule: #e3e6e1;
+  --wide: 76rem;
+  --font: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #161917;
+    --ink: #e6e9e4;
+    --muted: #9aa39c;
+    --moss: #a3c29a;
+    --lichen: #2f3f2c;
+    --rule: #2a2f2b;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 2.5rem clamp(1.25rem, 5vw, 4rem) 4rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  margin-bottom: clamp(3rem, 8vw, 6rem);
+  font-size: 1.05rem;
+}
+.site-name { font-weight: 500; text-decoration: none; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--moss); }
+
+/* ---------- Links ---------- */
+a { color: inherit; }
+main a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--moss);
+}
+main a:hover { background: var(--lichen); }
+a:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- About page: big text beside a photo ---------- */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+.about h1 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.about .lead p {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+  line-height: 1.42;
+}
+.about .lead .aside {
+  margin-top: 2.25rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* ---------- Research page: headings on the left, content on the right ---------- */
+.page-title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.page-intro {
+  max-width: 46rem;
+  margin: 0 0 4rem;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  line-height: 1.45;
+}
+.block {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 46rem);
+  gap: 0.5rem 3rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--rule);
+}
+.block h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--moss);
+}
+.block p { margin: 0 0 1rem; }
+.block h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.45rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+}
+.meta { color: var(--muted); font-size: 1.05rem; margin: 0 0 1rem; }
+
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { margin-bottom: 0.9rem; }
+.list .where { display: block; color: var(--muted); font-size: 1.05rem; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.site-footer nav { display: flex; gap: 1.25rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--moss); }
+
+/* ---------- Post pages (for when they're converted) ---------- */
+.post { max-width: 44rem; }
+.post-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.12; margin: 0 0 0.5rem; }
+.post-meta { color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; }
+.post blockquote { margin: 1.5rem 0; padding-left: 1.25rem; border-left: 2px solid var(--moss); color: var(--muted); }
+
+/* ---------- Smaller screens ---------- */
+@media (max-width: 52rem) {
+  .about { grid-template-columns: 1fr; }
+  .portrait { max-width: 24rem; }
+  .block { grid-template-columns: 1fr; }
+}
