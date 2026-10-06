@@ -174,3 +174,18 @@ a:focus-visible {
   .portrait { max-width: 24rem; }
   .block { grid-template-columns: 1fr; }
 }
+
+/* ---------- 404 page ---------- */
+.lost { max-width: 44rem; min-height: 50vh; }
+.lost h1 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.lost p {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+  line-height: 1.42;
+}
