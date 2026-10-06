@@ -189,3 +189,14 @@ a:focus-visible {
   font-size: clamp(1.35rem, 2.1vw, 1.75rem);
   line-height: 1.42;
 }
+
+/* ---------- Footer icons ---------- */
+.site-footer { align-items: center; }
+.site-footer .icons { gap: 1rem; }
+.site-footer .icons a {
+  display: inline-flex;
+  padding: 0.2rem;
+  color: var(--muted);
+}
+.site-footer .icons a:hover { color: var(--moss); }
+.site-footer .icons svg { width: 1.4rem; height: 1.4rem; }
